@@ -34,9 +34,25 @@ re = /Hel{2,}o/i; //Must occur at least {x} times
 re = /^([0-9]x){3}$/ // Must match a # 3x only
 
 
-// String match
-const str = '3x3x3x';
+// Shorthand Character Classes
 
+re = /\w/; //Finds 1st Word character - alphanumeric or _
+re = /\w+/; //Finds 1 or more Word character or _
+re = /\W/; //Match Non word characters
+re = /\d/; //Match any digit
+re = /\d+/; //Match any digit 0 or more times
+re = /\D/; //Match Non digits only (letters)
+re = /\s/; //Match whitespace characters (a space)
+re = /\S/; //Match Non whitespace characters (no staces space)
+re = /Heaven\b/i; //Word Boundary
+
+// Assertions
+re = /x(?=y)/; // Match x only if followed by y
+re = /x(?!y)/; // Match x only if not followed by y
+
+
+// String to match
+const str = 'xqewereyx';
 
 // Log result
 const result = re.exec(str);
